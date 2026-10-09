@@ -1,0 +1,20 @@
+{
+  "features": {
+    "tickets": {
+      "title": "Заявки — плаваюча кнопка (Ctrl+Shift+E), знімок сторінки, варіанти від Claude, обговорення",
+      "paths": [
+        "src/TTemplate.Api/Features/Tickets",
+        "src/TTemplate.UI/src/features/tickets",
+        ".claude/skills/tickets",
+        "docs/tickets.md"
+      ]
+    },
+    "jobs": {
+      "title": "Операції — фонові задачі з кроками й логом, сторінка історії, лічильник у меню",
+      "paths": [
+        "src/TTemplate.Api/Features/Jobs",
+        "src/TTemplate.UI/src/features/jobs"
+      ]
+    }
+  }
+}

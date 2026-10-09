@@ -1,0 +1,56 @@
+/* Базові стилі застосунку поверх base бібліотеки t-components. Лише токени --t-*; стилі компонентів .t-* не перевизначаються. */
+
+:root {
+  --app-drawer-w: min(640px, 100vw);
+}
+
+#app { height: 100%; }
+
+h1, h2, h3 { font-weight: var(--t-font-weight-semibold); margin: 0; line-height: var(--t-line-height-tight); }
+h1 { font-size: var(--t-font-size-h1); }
+h2 { font-size: var(--t-font-size-h2); }
+h3 { font-size: var(--t-font-size-h3); }
+p { margin: 0; }
+
+a { color: var(--t-color-accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+input, button, textarea { font-family: inherit; }
+
+.mono { font-family: var(--t-font-mono); font-size: 0.93em; }
+.muted { color: var(--t-color-text-muted); }
+.small { font-size: var(--t-font-size-small); }
+.xs { font-size: var(--t-font-size-mini); }
+.nowrap { white-space: nowrap; }
+.grow { flex: 1 1 auto; min-width: 0; }
+.row { display: flex; align-items: center; gap: var(--t-space-2); }
+.row.wrap { flex-wrap: wrap; }
+.stack { display: flex; flex-direction: column; gap: var(--t-space-3); }
+.stack.tight { gap: 6px; }
+.ellipsis { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bad-text { color: var(--t-color-danger); }
+.warn-text { color: var(--t-color-warning); }
+
+/* Сторінка і заголовок сторінки. */
+.page { display: flex; flex-direction: column; gap: 14px; max-width: 1320px; width: 100%; margin-inline: auto; }
+.content-wide .page { max-width: none; }
+.page-head { display: flex; align-items: flex-end; gap: var(--t-space-3); margin-bottom: 2px; }
+
+/* Вміст діалогів modalManager: тіло і рядок дій. */
+.dlg { display: flex; flex-direction: column; }
+.dlg-body { padding: var(--t-space-1) var(--t-space-4) var(--t-space-4); display: flex; flex-direction: column; gap: var(--t-space-3); }
+.dlg-foot { display: flex; justify-content: flex-end; gap: var(--t-space-2); padding: var(--t-space-3) var(--t-space-4); border-top: 1px solid var(--t-color-border); }
+
+/* Пульсуюча крапка активного стану. */
+.pulse-dot { display: inline-block; width: 6px; height: 6px; margin-right: 4px; border-radius: 50%; background: currentColor; animation: app-pulse calc(var(--t-duration) * 8) ease-in-out infinite; }
+@keyframes app-pulse { 50% { opacity: 0.25; } }
+
+/* Лог. */
+.log {
+  font-family: var(--t-font-mono); font-size: var(--t-font-size-mini); line-height: 1.55;
+  background: var(--t-color-surface-2); border: 1px solid var(--t-color-border); border-radius: var(--t-radius-medium);
+  padding: var(--t-space-2) 10px; overflow: auto; white-space: pre-wrap; word-break: break-word;
+}
+
+/* Анімація drawer-а. */
+.slide-enter-active, .slide-leave-active { transition: transform var(--t-duration) ease, opacity var(--t-duration); }
+.slide-enter-from, .slide-leave-to { transform: translateX(24px); opacity: 0; }

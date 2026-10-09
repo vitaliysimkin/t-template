@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "api",
+      "runtimeExecutable": "dotnet",
+      "runtimeArgs": ["run", "--project", "src/TTemplate.Api", "--launch-profile", "http"],
+      "port": 5180
+    },
+    {
+      "name": "ui",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "src/TTemplate.UI", "--", "--port", "5173", "--strictPort"],
+      "port": 5173
+    }
+  ]
+}
